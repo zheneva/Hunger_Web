@@ -21,8 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             scrollLlinks[i].addEventListener('click', (event) =>{
                 event.preventDefault(); 
+                hungryPeopleMenuNav.forEach((menu) => {
+                    menu.classList.remove('active');
+                })
                 const id = scrollLlinks[i].getAttribute('href')
-        
                 document.querySelector(id).scrollIntoView({
                     behavior: 'smooth',
                     block: 'start',

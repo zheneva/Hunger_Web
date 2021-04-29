@@ -10,6 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
             menu.classList.toggle('active');
         })
     });
+
+
+
+    //smooth scrolling
+
+    const scrollLlinks = document.querySelectorAll('a.hungry-people__link');
+
+        for (let i = 0; i < scrollLlinks.length; i++) {
+            
+            scrollLlinks[i].addEventListener('click', (event) =>{
+                event.preventDefault(); 
+                const id = scrollLlinks[i].getAttribute('href')
+        
+                document.querySelector(id).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                })
+            })
+        }
 })
 
 

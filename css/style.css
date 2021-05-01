@@ -121,6 +121,37 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffff;
   padding: 20px 0;
   border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.header-button::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background: #e8c300;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.header-button:hover::before {
+  background: #e8c300;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.header-button:active::before {
+  background-color: #f5e597;
 }
 
 .header-burger {

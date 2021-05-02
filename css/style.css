@@ -73,6 +73,28 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+@-webkit-keyframes swipe {
+  0% {
+    -webkit-transform: translate(0, -7px);
+            transform: translate(0, -7px);
+  }
+  100% {
+    -webkit-transform: translate(0, 7px);
+            transform: translate(0, 7px);
+  }
+}
+
+@keyframes swipe {
+  0% {
+    -webkit-transform: translate(0, -7px);
+            transform: translate(0, -7px);
+  }
+  100% {
+    -webkit-transform: translate(0, 7px);
+            transform: translate(0, 7px);
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -372,6 +394,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 18px;
 }
 
+.hungry-people__link:hover {
+  background-color: rgba(78, 69, 69, 0.9);
+}
+
 @media (max-width: 768px) {
   .hungry-people__link {
     font-size: 24px;
@@ -488,6 +514,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 50px 0;
 }
 
+.hungry-people__button-swipe:hover .hungry-people__swipe {
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+
 @media (max-width: 768px) {
   .hungry-people__button-swipe {
     margin: 0 0 20px 0;
@@ -499,6 +530,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  -webkit-animation: swipe 1s ease 0s infinite normal;
+          animation: swipe 1s ease 0s infinite normal;
 }
 
 .hungry-people__swipe img {
@@ -1136,6 +1169,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #333333;
   padding: 2% 5%;
   border-right: 1px solid rgba(51, 51, 51, 0.2);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: .4s ease;
+  transition: .4s ease;
+  -webkit-transition-property: padding, color;
+  transition-property: padding, color;
+}
+
+.nav-menu__item:hover {
+  padding: 0.5% 5%;
+  color: #b4abab;
 }
 
 @media (max-width: 767px) {

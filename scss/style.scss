@@ -15,6 +15,16 @@ $screen_sm_max: 767px;
 $screen_md_max: 991px;
 $screen_lg_max: 1199px;
 
+@keyframes swipe {
+    0%{
+        transform: translate(0, -7px);
+    }
+    100%{
+        transform: translate(0, 7px);
+    }
+    
+}
+
 * {
     box-sizing: border-box;
 }
@@ -264,6 +274,9 @@ $screen_lg_max: 1199px;
 
         font-size: 12px;
         line-height: 18px;
+        &:hover{
+            background-color: rgba(78, 69, 69, .9);
+        }
         @media (max-width: $screen_md) {
             font-size: 24px;
             line-height: 36px;
@@ -358,6 +371,9 @@ $screen_lg_max: 1199px;
         border-radius: 50%;
         padding: 10px;
         margin: 50px 0;
+        &:hover .hungry-people__swipe{
+            animation-name: none;
+        }
         @media (max-width: $screen_md) {
             margin: 0 0 20px 0;
         }
@@ -369,6 +385,8 @@ $screen_lg_max: 1199px;
         width: 40px;
         height: 40px;
         border-radius: 50%;
+
+        animation: swipe 1s ease 0s infinite normal ;
     }
 
     &__swipe img {
@@ -946,6 +964,14 @@ $screen_lg_max: 1199px;
 
         padding: 2% 5%;
         border-right: 1px solid rgba(51, 51, 51, 0.2);
+        box-sizing: content-box;
+
+        transition: .4s ease;
+        transition-property: padding, color;
+        &:hover{
+            padding: 0.5% 5%;
+            color: #b4abab;
+        }
         @media (max-width: $screen_sm_max) {
             width: 15%;
         }
@@ -987,7 +1013,6 @@ $screen_lg_max: 1199px;
     }
 }
 
-//ToDoo добавить элементы коллажа + стили для секции private
 
 .private {
     background-image: url(../img/private_bg.jpg);
